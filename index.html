@@ -306,7 +306,19 @@
   </footer>
 
   <!-- व्हाट्सऐप बटन (नंबर बदल लेना) -->
-  <a class="whatsapp" href="https://wa.me/918966934950" href="https://wa.me/917869440531">व्हाट्सऐप</a>
+  <a class="whatsapp" href="https://wa.me/918966934950">व्हाट्सऐप</a>
 
+  <script>
+document.querySelector('#booking form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var msg = 'जय श्री राम 🙏\nसुंदरकांड पाठ बुकिंग:\n\n';
+  this.querySelectorAll('input, select, textarea').forEach(function (f) {
+    var label = f.id ? document.querySelector('label[for="' + f.id + '"]') : null;
+    var name = label ? label.textContent : (f.placeholder || f.name || 'जानकारी');
+    msg += name + ': ' + f.value + '\n';
+  });
+  window.open('https://wa.me/918966934950?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
 </body>
 </html>
